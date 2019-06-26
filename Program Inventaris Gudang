@@ -1,0 +1,68 @@
+
+package projectuas;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author njt21
+ */
+public class responsi2 {
+
+    @SuppressWarnings("empty-statement")
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Masukkan Banyak Item : ");
+        int brg = input.nextInt();
+            while (brg == 0){
+            System.out.println();
+            System.out.println("barang Tidak Boleh Nol, Masukkan Dengan Benar !!!");
+            System.out.println();
+            System.out.print("Masukkan Banyak Item : ");
+            brg = input.nextInt();
+            }
+        if (brg > 0) {
+            String nama[] = new String[brg];
+            int barangmasuk[] = new int[brg];
+            int barangkeluar[] = new int[brg];
+            int barangcacat[] = new int[brg];
+            int jumlahstok[] = new int[brg];
+            int tot = 0;
+
+            for (int b = 0; b < brg; b++) {
+
+                System.out.print("Nama Barang " + (b + 1) + " = ");
+                nama[b] = input.next();
+                System.out.print("Jumlah Stok Barang " + nama[b] + " = ");
+                jumlahstok[b] = input.nextInt();
+                System.out.print("Barang Masuk " + nama[b] + " = ");
+                barangmasuk[b] = input.nextInt();
+                System.out.print("Barang Keluar " + nama[b] + " = ");
+                barangkeluar[b] = input.nextInt();
+                System.out.print("Barang Cacat " + nama[b] + " = ");
+                barangcacat[b] = input.nextInt();
+                System.out.println(" ");
+                tot = jumlahstok[b] + barangmasuk[b] - barangkeluar[b] - barangcacat[b];
+            }
+
+            for (int c = 0; c < brg; c++) {
+                System.out.println("Barang ke- " + (c + 1));
+                System.out.println("#  Nama Barang         = " + nama[c]);
+                System.out.println("#  Jumlah Stok Barang = " + jumlahstok[c]);
+                System.out.println("#  Jumlah Barang Masuk = " + barangmasuk[c]);
+                System.out.println("#  Jumlah Barang Keluar = " + barangkeluar[c]);
+                System.out.println("#  Jumlah Barang Cacat = " + barangcacat[c]);
+                System.out.println("#  Sisa Stok Barang = " + tot);
+            }
+            ty();
+        }
+    }
+
+    static void ty() {
+        System.out.println();
+        System.out.println("====================");
+        System.out.println(" Terima Kasih. :)");
+        System.out.println("====================");
+    }
+}
